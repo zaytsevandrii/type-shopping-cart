@@ -1,14 +1,24 @@
-import { Button } from 'react-bootstrap'
+import { Button } from "react-bootstrap"
+import Container from "react-bootstrap/esm/Container"
+import { Routes, Route } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import About from "./pages/About"
+import Home from "./pages/Home"
+import Store from "./pages/Store"
 
 function App() {
-
-  return (
-    <div className="App">
-      <Button variant='danger'>
-        Click me
-      </Button>
-    </div>
-  )
+    return (
+        <>
+            <Navbar />
+            <Container className="mb-4">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/store" element={<Store />} />
+                </Routes>
+            </Container>
+        </>
+    )
 }
 
 export default App
